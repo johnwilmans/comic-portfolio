@@ -1,0 +1,2209 @@
+/*
+  Theme Name: Comic Portfolio Theme
+  Theme URI:  http://www.yellow-rocket.com
+  Author:  John Wilmans
+  Author URI: http://www.yellow-rocket.com
+  Description: The Comic Portfolio theme takes us back to a time when comic books and pop art were cool.  Using comic panels and bright images, comic portfolio theme is a very different way to promote your portfolio.  It is incredibly customisable by using the Customizer and comes with more than 5 sidebars and menu areas so you can make it personal to you.
+  Version: 1.0
+  License: GNU General Public License v2 or later
+  License URI: http://www.gnu.org/licenses/gpl-2.0.html
+  Tags: responsive, mobile, customizer, panel, sidebar, left sidebar, right sidebar, yellow, white, red, green, blue, black, featured images, custom-header, custom-menu, columns,
+  Text-domain: comic-portfolio
+  This theme, like WordPress, is licensed under the GPL.
+  Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/*
+
+Green   #465902
+Yellow  #F2B705
+Red #D90404
+Sidebar #d97904
+
+
+
+*/
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing
+}
+
+/*----- GLOBAL STYLES -----*/
+
+
+html {
+  font-size: 16px;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+    
+
+}
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+	clear: both;
+    overflow: hidden;
+}
+.clear-float{
+	clear: both;
+
+}
+.row {
+  width: 75%;
+	margin-left: -0.3%;
+}
+.row-full{
+	width: 100%;
+	margin-left: -0.3%;
+}
+.row-spec{
+	width: 60%;
+}
+.row-small{
+	width: 55%;
+}
+.quarter{
+  width: 25%;
+}
+.third{
+  width: 38%;
+}
+.half{
+  width: 60%;
+}
+
+h1, h2, h3, h4, h5, h5, li, label {
+  font-family: "futura-pt", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+.widget{
+	overflow: hidden;
+}
+
+li {
+  font-size: 2em;
+  color: black;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	list-style: none;
+}
+li:after{
+	content: " ";
+	height: 0;
+}
+p{
+
+	font-family: "badaboom-pro", sans-serif;
+	font-size: 1em;
+	line-height: 0.9em;
+	font-weight:100;
+	color: black;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+.fa {
+	color: black;
+}
+.gradient-box::first-letter, #panel-4 .text-box:first-letter, #panel-3 .text-box p:first-letter{
+	font-size: 2em;
+	color: #D90404;
+	text-shadow: 2px 2px black;
+	postion: absolute;
+	top: -10px;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+
+}
+input[type='submit'], .search-submit, .widget input[type="submit"]{
+	display: block;
+	font-size: 1em;
+	width: 80%;
+
+	margin-top: -2%;
+}
+.box, #sidebar-home input[type='submit'], .search-submit {
+	border-width: 3px;
+	border-color: rgb(0, 0, 0);
+	border-style: solid;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+.btn-block, .button{
+	display: block;
+	width: 90%;
+	margin-left: 5%;
+	font-size: 1em;
+
+}
+.btn, #sidebar-home input[type='submit'], .search-submit, .wpcf7-submit, .widget input[type="submit"], #text-5, .widget input[type="submit"], .button{
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+  border-radius: 0;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	font-family: "futura-pt", sans-serif;
+  background-color: #465902;
+}
+
+.btn-default, #sidebar-home input[type='submit'], .search-submit, .wpcf7-submit, .widget input[type="submit"], #text-5, .widget input[type="submit"], .button {
+  background-color: #465902;
+  border: none;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	color: white;
+	font-weight: bold;
+}
+.btn-default:hover, #sidebar-home input[type='submit']:hover, .search-submit:hover, .wpcf7-submit:hover, #text-5:hover, .widget input[type="submit"]:hover, .button:hover {
+  background-color: #798C35;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+.btn-default:visited, #sidebar-home input[type='submit']:visited, .search-submit:visited, .wpcf7-submit:visited, #text-5:visited, .widget input[type="submit"]:visited, .button:visited {
+	background-color: #798C35;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+
+}
+
+.btn-default:focus, #sidebar-home input[type='submit']:focus, .search-submit:focus, .wpcf7-submit:focus, #text-5:focus, .widget input[type="submit"]:focus, .button:focus {
+	background-color: #798C35;
+	border-collapse: #798C35;
+	font-size: 1.2em;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+
+}
+.form-btn {
+	margin-top: 20%;
+}
+.contactme a{
+	color: black;
+}
+.contactme a:hover {
+	font-size: 1em;
+	color: #D90404;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+.contact-panel {
+	background-color: #F2B705;
+}
+/*----- HEADER STYLES -----*/
+.nav {
+	border-width: 3px;
+  border-color: rgb(0, 0, 0);
+  border-style: solid;
+  background-color: rgb(242, 183, 5);
+  width: 100%;
+  height: 250px;
+}
+.logo{
+width: 25%;
+height: 244px;
+float:left;
+}
+.logo img{
+	width: 100%;
+	height: 100%;
+}
+.widget-area{
+	height: 250px;
+	width: 30%;
+	margin-left: 30%;
+}
+
+.nav-menu {
+  text-align: right;
+  width: 194px;
+  float: right;
+	margin-top: -17%;
+}
+.nav-menu:after {
+  clear: both;
+  overflow: auto;
+}
+.nav-menu a {
+  padding-right: 10px;
+}
+.nav-menu li{
+  background-color: #D90404;
+  margin-top: 10px;
+  padding: 5px;
+	-webkit-border-top-left-radius: 2em;
+	-moz-border-top-left-radius: 2em;
+  border-top-left-radius: 2em;
+  border-bottom-left-radius: 2em;
+
+  padding-right: 0;
+}
+
+.nav-menu li:hover{
+	transition: background-color 1s ease-in-out;
+	background-color: #F2B705;
+}
+.nav-menu a {
+  text-decoration: none;
+  color: black;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	font-size: 0.8em;
+}
+.nav-menu a:hover {
+  text-decoration: none;
+  color: white;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	font-size: 0.87em;
+
+
+}
+.nav-menu li:focus{
+    background-color: blue;
+}
+
+.nav-menu .current-menu-item {
+	width: 150%;
+}
+#menu-btn{
+    display: none;
+    position: absolute;
+    left: 100px;
+    top: 20px;
+}
+.menu-btn div{
+    position: absolute;
+    left: 100px;
+    top: 64%;
+    padding-right: 8px;
+    margin-top: -0.50em;
+    line-height: 1.2;
+    font-size: 18px;
+    font-weight: 200;
+    vertical-align: middle;
+    z-index: 99;
+}
+
+.menu-btn span{
+    display: block;
+    width: 35px;
+    height: 6px;
+    margin: 4px 0;
+    background: white;
+    z-index: 9999999;
+}
+
+.responsive-menu {
+    display: none;
+}
+
+.expand{
+    display: block !important;
+}
+.open-menu-link {
+    display: none;
+    position: absolute;
+    left: 15px;
+    top: 0;
+    margin-left: 0;
+    line-height: 55px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+li .sub-menu{
+    display: none;
+}
+.visible{
+    display: block !important;
+}
+
+#menu-mobile-menu{
+    border-color: black;
+    border-width: 3px;
+    border-style: solid;
+    width: 30%;
+    background-color: #F2B705;
+    height: auto;
+    z-index: 9999 !important;
+}
+#menu-mobile-menu a{
+    padding-top: -20%;
+    
+    margin-left: 0;
+    color: white;
+    font-size: 1.5em;
+    line-height: 1.6em;
+    vertical-align: middle;
+    text-decoration: none;
+}
+#menu-mobile-menu li{
+    padding-top: -10%;
+}
+/*----- NAV SUB-MENU's ---*/
+.submenu {
+	height: 5%;
+	background-color: black;
+	width: 100%;
+	margin-left: 0.3%;
+	margin-top: 0.4%;
+	margin-bottom: 0.5%;
+}
+ul.sub-menu li a{
+	display: inline;
+	float: left;
+	color: white;
+	padding-left: 3%;
+	font-size: 0.6em;
+	padding-top: 0.5%;
+	text-decoration: none;
+	text-align: center;
+}
+
+ul.sub-menu li a:hover{
+	color: black;
+	background-color: white;
+    text-align: center;
+    margin-left: 3%;
+	padding-left: 3%;
+    padding-right: 3%;
+    line-height: 1em;
+    font-size: 0.8em;
+}
+
+
+.panel {
+
+	margin: 4px;
+	border-width: 3px;
+	border-color: rgb(0, 0, 0);
+	border-style: solid;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	height: 37vh;
+
+}
+.contact-panel {
+
+	margin: 4px;
+	border-width: 3px;
+	border-color: rgb(0, 0, 0);
+	border-style: solid;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+
+}
+.gradient-box{
+	background: #F2B705;
+	background: linear-gradient(#F2B705, #E54F4F);
+	background-size: cover;
+	border-width: 2px;
+	border-color: black;
+	border-style: solid;
+	margin-left: -2%;
+	margin-top: 1px;
+}
+.gradient-box p {
+	text-align: left;
+	margin-left: -4%;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	padding: 0;
+}
+.text-box {
+	background: white;
+	position: relative;
+	top: 45%;
+	left: 39%;
+	border-width: 2px;
+	border-color: black;
+	border-style: solid;
+	margin-left: -2%;
+	margin-top: -5px;
+}
+/*----- PANEL 1 STYLES -----*/
+#panel-1{
+	box-sizing: border-box;
+	float: left;
+}
+
+#panel-1 img {
+	height: 36vh;
+	width: 100%;
+    border:0;
+	padding:0;
+}
+#panel-1 .gradient-box {
+	position: relative;
+	margin-top: -100%;
+	margin-left: 1%;
+	width: 90%;
+}
+
+#panel-1 .gradient-box p{
+	margin-left: 3%;
+	padding-bottom: 1%;
+}
+#panel-1 .text-box {
+	position: relative;
+	width: 90%;
+	margin-top: 10%;
+	margin-left: -35%;
+	padding-bottom: 1%;
+}
+
+#panel-1 .text-box p{
+	margin-left: 1%;
+}
+
+.sleep {
+	position: relative;
+	font-size: 1.2em;
+}
+	.bigz{
+		font-size: 1.5em;
+	}
+.sleep1{
+	animation-name: sleeping;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	top: -70px;
+	left: 30px;
+}
+.sleep2{
+	animation-name: sleeping;
+	animation-delay: 3s;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	top: -70px;
+	left: 100px;
+}
+.sleep3{
+	animation-name: sleeping;
+	animation-delay: 5s;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	top: -70px;
+	left: 170px;
+}
+
+/*----- PANEL 2 STYLES -----*/
+#panel-2{
+	float: left;
+box-sizing: border-box;
+}
+#panel-2 img {
+	height: 36vh;
+	width: 100%;
+}
+
+#panel-2 .gradient-box {
+	position: relative;
+	width: 98%;
+	margin-left: 1%;
+	margin-top: -49%;
+	z-index: 20;
+}
+#panel-2 .gradient-box p {
+	margin-left: 0;
+}
+
+#panel-2 .text-box {
+position: relative;
+width: 65%;
+margin-left: -6%;
+margin-top: -1%;
+}
+#rocket img{
+width: 10% !important;
+height: 10% !important;
+z-index: 10000;
+}
+
+.rocket-fly{
+
+position: relative;
+top: -100px;
+left: 0px;
+animation-name: fly;
+animation-delay: 0;
+animation-duration: 8s;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+}
+/*----- PANEL 3 STYLES -----*/
+#panel-3{
+box-sizing: border-box;
+	background: #d3bb0f;
+	float: left;
+}
+#panel-3 img {
+	height: 36vh;
+	width: 50%;
+}
+#panel-3 .gradient-box {
+	position: relative;
+	width: 50%;
+	height: 29vh;
+	margin-left: 47%;
+	margin-top: -42%;
+}
+#panel-3 .gradient-box p{
+	padding-left: 6%;
+}
+#panel-3 .text-box{
+	position: relative;
+	width: 35%;
+	margin-top: -32%;
+	margin-left: -38%;
+}
+
+/*----- PANEL 4 STYLES -----*/
+#panel-4{
+box-sizing: border-box;
+	background: #d3bb0f;
+	float: left;
+
+}
+#panel-4 img {
+	height: 36vh;
+	width: 100%;
+
+}
+#panel-4 .gradient-box {
+	position: relative;
+	width: 35%;
+	height: 29vh;
+	margin-left: 61%;
+	margin-top: -63%;
+}
+
+#panel-4 .gradient-box p{
+	padding-left: 7%;
+}
+#panel-4 .text-box {
+	position: relative;
+	width: 25%;
+	margin-top: -80%;
+	margin-left: -39%;
+
+}
+
+/*----- CONTACT PAGE STYLES -----*/
+#aboutpage{
+    height: 90vh;
+    overflow: hidden;
+}
+#streetscene {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	
+}
+#phonebooth {
+position: absolute;
+top: 50%;
+overflow: hidden;
+left: -15%;
+animation-name: pulse;
+animation-delay: 0;
+animation-duration: 1.3s;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+animation-direction: alternate;
+}
+
+#hero {
+
+	transform: scale(0.5);
+	margin-top: -40rem;
+	margin-left: -12rem;
+	animation-name: hero;
+	animation-delay: 0;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-direction: alternate;
+}
+#aboutus {
+	position: relative;
+	margin-top: -56%;
+	margin-left: 71%;
+	width: 6.5%;
+	height: 4.2rem;
+	background-color: black;
+	animation-name: scroll;
+	animation-delay: 0;
+	animation-duration: 0.75s;
+	animation-iteration-count: infinite;
+	animation-timing-function:linear;
+}
+
+#aboutus:hover {
+	background-color: white;
+	animation-play-state:paused;
+}
+#aboutus p{
+	font-family: futura;
+	line-height: 1em;
+}
+/*----- SIDEBAR STYLES -----*/
+.sidebar{
+	box-sizing: border-box;
+	background: #d97904;
+	border-width: 3px;
+	border-color: rgb(0, 0, 0);
+	border-style: solid;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
+.sidebar h2{
+
+	text-align: center;
+	font-size: 1em;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	text-decoration: none;
+}
+
+.sidebar p{
+	font-family: 'futura-pt', sans-serif;
+	font-size: 0.5em;
+	padding-left: 3%;
+	margin-bottom: 2%;
+	padding-top: 2%;
+}
+
+.sidebar input[type='email'],.sidebar input[type='text'],.sidebar textarea {
+	width: 80%;
+	margin-top: 2%;
+	margin-left: 3%;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+#sidebar-home{
+	width: 24.8%;
+	float: right;
+	margin-top: -37.5vh;
+}
+
+
+
+/*#sidebar-blog  {
+	box-sizing: border-box;
+	position: absolute;
+	top: 43%;
+	left: 74%;
+	width: 24%;
+}*/
+#sidebar-blog{
+    position: absolute;
+    top: 43.5%;
+    left: 73%;
+    width: 24%;
+}
+
+#sidebar-port{
+	box-sizing: border-box;
+	position: relative;
+	
+	width: 24% !important;
+}
+
+#sidebar-port-horiz {
+width: 100%;
+background-color: #F2B705;
+border-style: solid;
+border-color: black;
+border-width: 3px;
+margin-top: 0.5%;
+height: auto;
+}
+
+
+div.left-sidebar.sidebar.contact-panel{
+	width: 16% ;
+	float: left;
+	background-color: #d97904;
+	height: 70vh;
+}
+
+.left-sidebar ul li a{
+	color: white;
+}
+.mailchimp-form {
+margin-top: -2%;
+}
+.mailchimp-form p{
+	font-family: 'futura-pt', sans-serif;
+	font-size: 0.7em;
+	color: white;
+
+	margin-top: 1%;
+}
+.mailchimp-name{
+	width: 20%;
+}
+.mailchimp-email{
+	height: 2rem;
+	width: 30%;
+}
+.mailchimp-submit{
+	margin-top: 0.5%;
+	width: 30%;
+}
+
+.mailchimp {
+	float: left;
+
+}
+.mailchimp input{
+width: 90%;
+height: 2rem;
+}
+.mailchimp input[type="submit"]{
+	background-color: #465902;
+	font-size: 0.5em;
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+	color: white;
+}
+.mailchimp input[type="submit"]:hover {
+	font-size: 0.7em;
+	color: black;
+}
+
+.mc4wp-alert p{
+	font-family: "futura-pt", sans-serif;
+	color: white;
+	font-size: 0.7em;
+	margin-top: 1%;
+}
+li#text-4.widget.widget_text{
+	list-style: none;
+}
+.screen-reader-text {
+	display: none !important;
+}
+
+input[type="search" i] {
+
+		width: 80%;
+		padding: 2%;
+		margin-bottom: 5%;
+}
+
+h2.widgettitle, .caption{
+	color: white;
+
+}
+.widget {
+	margin-left: 10%;
+	padding-bottom: 3%;
+	padding-top: 3%;
+}
+
+.tagcloud a{
+	color: white;
+	text-decoration: none;
+	background-color: #DD861D;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	padding:0 2% 0 2%;
+	margin: 2% 0 2% 0;
+	border-radius: 5%;
+}
+
+.widget_recent_entries li a{
+    color: white;
+    font-size: 0.3em;
+    line-height: 0.4em;
+    text-decoration: none;
+}
+
+.widget_recent_entries li {
+    line-height: 0.6em;
+    
+}
+.widget_nav_menu{
+    display: inline-block;
+}
+
+.widget_nav_menu li a{
+    font-size: 0.4em;
+    color: white;
+    float: left;
+}
+
+.widget_nav_menu li{
+ line-height: 0.4em;   
+}
+
+.widget p, .widget a{
+    font-family: 'futura-pat', sans-serif;
+    color: white;
+    font-size: 0.6em;
+    padding-bottom: 2%;
+}
+.widget input[type="submit"]{
+    display: block;
+    background-color: #465902;
+    width: 95%;
+    margin-top: 1%;
+}
+
+.widget_wpcom_social_media_icons_widget li {
+    margin-right: 0.2em!important;
+}
+#text-5 a{
+    text-decoration: none;
+    
+}
+#text-5 {
+    text-align: center;
+}
+
+#text-4{
+    color: white;
+    font-size: 0.9em;
+    text-align: center;
+}
+.widget_googleplus_badge{
+    width: 90% !important;
+}
+/*----- PORTFOLIO PAGE STYLES -----*/
+.port-img {
+	box-sizing: border-box;
+	float: left;
+	height: 30vh;
+}
+.port-img img{
+	box-sizing: border-box;
+	width: 100%;
+	height: 29vh;
+}
+.port-blurb {
+	box-sizing: border-box;
+	background-color: #D90404;
+	height: 30vh;
+	float: left;
+	padding: 1%;
+
+
+}
+.port-blurb p{
+	font-family: futura;
+	color: #d9c3a9;
+	margin-bottom: 1rem;
+}
+.port-blurb h2 {
+	text-align: center;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: white;
+}
+.port-blurb a{
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+	padding-left: 3%;
+	padding-right: 3%;
+	font-family: 'futura-pt', sans-serif;
+	font-size: 1.2em;
+	background-color: #465902;
+}
+.port-blurb a:hover{
+	font-size: 1.4em;
+}
+.heading {
+	width: 91%;
+	text-align: center;
+	font-size: 1.8em;
+	font-weight: bold;
+	background-color: #F2B705;
+	color: white;
+}
+.portfolio #sidebar {
+	box-sizing: border-box;
+	position:absolute;
+	left: 74%;
+	top: 38vh;
+
+}
+
+/*----- SINGLE PORT PAGE STYLES -----*/
+.port-page-img {
+	box-sizing: border-box;
+}
+.port-image{
+	box-sizing: border-box;
+	width: 59.6%;
+	height: 40vh;
+	float: left;
+}
+.port-image img{
+	box-sizing: border-box;
+	width: 100%;
+	height: 39.3vh;
+}
+.portpage-blurb{
+	box-sizing: border-box;
+	width: 39%;
+	height: 60vh;
+	background-color: #465902;
+	float: left;
+}
+.portpage-blurb h1{
+	color: white;
+	font-size: 2em;
+	text-align: center;
+}
+.portpage-blurb h3{
+	font-size: 1.6em;
+	color: white;
+	margin-bottom: 1%;
+	margin-top: 1;
+}
+.portpage-blurb p{
+	font-family: futura;
+	font-weight: normal;
+	color: #d9c3a9;
+	line-height: 1.2em;
+
+}
+.specs {
+	box-sizing: border-box;
+ float: left;
+}
+.spec{
+	box-sizing: border-box;
+	position: relative;
+	width: 31%;
+	height: 19vh;
+	background-color: #D90404;
+	float: left;
+}
+.fa-calendar, .fa-cogs, .fa-code {
+	margin-top: 2rem;
+	margin-left: 0.4rem;
+}
+
+.date {
+	box-sizing: border-box;
+	text-align: center;
+	color: white;
+	font-size: 1.5em;
+	margin-top: -1.5em;
+	font-family: futura;
+}
+.service-list, .tech-list{
+	font-size: 0.5em;
+	margin-top: -8em;
+	margin-left: 40%;
+
+}
+ul.service-list li, ul.tech-list li{
+	color: white;
+}
+
+/*--- ABOUT PAGE STYLES --*/
+.services {
+	box-sizing: border-box;
+	width: 80%;
+	float: left;
+}
+.services-blurb p,.services-blurb h2 {
+	width: auto%;
+		padding-left: 2%;
+		padding-right: 2%;
+}
+.services-blurb h2{
+	padding-top: 1%;
+}
+.services-blurb-half{
+	width: 50%;
+	float: left;
+box-sizing: border-box;
+}
+.services-blurb-half p,.services-blurb-half h2 {
+	padding: 3%;
+}
+.services-blurb-quarter{
+	width: 33%;
+	float: left;
+	box-sizing: border-box;
+
+}
+
+.landing{
+	height: 70vh;
+	box-sizing: border-box;
+	background-color: #F2B705;
+}
+#batman {
+
+	margin-top: -45%;
+	width: 45%;
+
+}
+.batman-box{
+	width: 20%;
+	box-sizing: border-box;
+}
+.bubble{
+	position: relative;
+ width: 200px;
+ height: 100px;
+ margin-top: 20%;
+ text-align: center;
+ line-height: 100px;
+ background-color: #fff;
+ border: 2px solid black;
+ -webkit-border-radius: 30px;
+ -moz-border-radius: 30px;
+ border-radius: 30px;
+ -webkit-box-shadow: 2px 2px 4px #888;
+ -moz-box-shadow: 2px 2px 4px #888;
+ box-shadow: 2px 2px 4px #888;
+    z-index: 10000;
+}
+p.bubble:before {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 30px;
+  top: 100px;
+  border: 25px solid;
+  border-color: black transparent transparent black;
+}
+p.bubble:after {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 38px;
+  top: 100px;
+  border: 19px solid;
+  border-color: #fff transparent transparent #fff;
+}
+.bubble p{
+	font-size: 0.8em;
+
+}
+.robin{
+	animation-name: robin;
+	animation-duration: 1000s;
+	animation-delay: 3s;
+	margin-left: 10%;
+
+}
+.batman{
+	animation-name: robin;
+	animation-duration: 1000s;
+	animation-delay: 7s;
+	margin-left: 20%;
+	margin-top: -18%;
+
+
+}
+.landing .gradient-box {
+	width: 50%;
+	margin-left: 45%;
+	height: 100%;
+}
+.landing .gradient-box p{
+	font-family: "badaboom-pro", sans-serif;
+	font-size: 1em;
+	line-height: 0.9em;
+	font-weight:100;
+	color: black;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	margin-left: 2%;
+
+}
+.findme {
+	font-size: 0.5em;
+}
+.about{
+	width: 81%;
+	margin-right: 1%;
+}
+.whatwedo, .wordpress, .responsive, .webapp, .coding, .design, .frontend, .backend, .process {
+	display: none;
+}
+.about h2{
+	color: white;
+	font-size: 1.5em;
+	margin-bottom: 2%;
+}
+.about p{
+	font-family: futura;
+	line-height: 1.2em;
+	margin-bottom: 2%;
+}
+.about p a{
+	color: white;
+}
+.tumbleweed {
+	margin-top: 3%;
+    animation-name: tumbleweed;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-timing-function: ease-in-out;
+
+}
+#play {
+	display: block;
+	width: 100%;
+	background-color: #D90404;
+	color: white;
+	font-size: 2em;
+	margin-top: 5%;
+}
+#surprise {
+	display: none;
+	text-align: center;
+	margin-top: 2%;
+	margin-bottom: 5%;
+}
+.frontend-bits{
+	margin-top: 2%;
+}
+.last {
+	margin-bottom: 3%;
+}
+
+/*-- ABOUTUS PAGE STYLES--*/
+.aboutjohn, .aboutus {
+	width: 47%;
+	height: 70vh;
+}
+.aboutjohn h1, .aboutus h1{
+	font-size: 1.5em;
+	color: white;
+	text-align: center;
+	margin-bottom: 2%;
+	margin-top: 2%;
+}
+
+.aboutjohn p, .aboutus p{
+	font-family: futura-pt, sans-serif;
+	margin-bottom: 3%;
+}
+.aboutjohn{
+	background-color: #F2B705;
+}
+.aboutus{
+	background-color: #465902;
+}
+#johnpic {
+	height: 12rem;
+	float: left;
+	margin-left: 7rem;
+	border-radius: 50%;
+	margin-right: 2rem;
+}
+#johnpic:after {
+	float: none;
+}
+.sidebar-about{
+	margin-top: -3rem;
+}
+
+/*------GETINTOUCH STYLES -----*/
+.contactus{
+	margin-left: 10%;
+	height: 140vh;
+}
+.contactus h2{
+	color: white;
+	text-align: center;
+	font-size: 2em;
+	margin-bottom: 2%;
+	margin-top: 2%;
+	text-transform: uppercase;
+}
+.contactus h3{
+	color: white;
+	margin-left: 25%;
+	font-size: 1.3em;
+	line-height: 2em;
+}
+.contactus h5{
+	font-size: 1.3em;
+	line-height: 1.4em;
+	letter-spacing: 0.25em;
+
+
+}
+
+.wpcf7-form-control-wrap input[type="text"], .wpcf7-form-control-wrap input[type="email"], .wpcf7-form-control-wrap input[type="tel"]{
+	padding-top: 3%;
+	font-size: 1em;
+}
+.contactus p{
+	font-family: 'futura-pt', sans-serif;
+	font-size: 0.5em;
+}
+.contact-info{
+	margin-top: 8%;
+}
+.contactus-form{
+	margin-top: 5%;
+
+}
+.contactus-form .form-control{
+	border-bottom-color: black;
+	border-top-style:hidden;
+	border-left-style:hidden;
+	border-right-style:hidden;
+	background-color: #F2B705;
+	border-radius:0;
+	box-shadow: none;
+}
+.social a{
+	color: white;
+	font-size: 1.5em;
+	text-transform: uppercase;
+}
+
+button#typeform{
+width: 10%;
+margin-left: -20%;
+}
+button#typeform a{
+text-decoration: none;
+}
+/*-----INDEX.PHP---*/
+#postlistpage h2{
+	font-size: 2em;
+	color: white;
+}
+#postlistpage h2 a{
+	color: white;
+	text-decoration: none;
+}
+#postlistpage h2 a:hover{
+	text-decoration: underline;
+}
+#postlistpage ul.post-categories li a{
+	font-size: 0.5em;
+	color: white;
+	text-decoration: none;
+}
+#postlistpage ul.post-categories li a:hover{
+	text-decoration: underline;
+}
+#postlistpage img.attachment-post-thumbnail.size-post-thumbnail.wp-post-image{
+	width: 100%;
+	height: 20vh;
+}
+.postlisting{
+	box-sizing: border-box;
+	float: left;
+	width: 49%;
+	border-color: black;
+	border-style: solid;
+	border-width: 3px;
+	margin-left: 6px;
+	margin-bottom: 5px;
+	height: 40vh;
+	background-color: #F2B705;
+}
+ul.post-categories li{
+	display: inline;
+	color: white;
+}
+
+/*------SINGLE BLOG PAGE -----*/
+.blog-panel {
+	background-color: white;
+	width: 73.5%;
+}
+.blog-panel h1{
+	font-size: 2em;
+
+}
+.blog-panel h1, .blog-panel h2, .blog-panel h3, .blog-panel h4, .blog-panel h5, .blog-panel h6{
+	text-align: center;
+	padding: 2%;
+}
+.blog-panel img{
+	width: 100%;
+	height: 40%;
+}
+.blog-panel p{
+	font-family: 'futura-pt', sans-serif;
+	font-size: 1.4em;
+	line-height: 1.5em;
+}
+.blog-panel h2, .blog-panel h3{
+font-size: 2em;
+}
+
+.blog-panel li{
+	font-size: 1em;
+	line-height: 1.3em;
+}
+.blog-paragraph{
+margin-left: 2%;
+margin-right: 2%;
+}
+.blog-list{
+font-size: 1.5em;
+margin-left: 3%;
+}
+.author{
+	padding-left: 3%;
+}
+.align-left{
+	float: left;
+}
+.align-right{
+	float: right;
+}
+
+.navigation{
+	height: 30px;
+}
+/*----- FOOTER -----*/
+.footer{
+
+	background-color: #D90404;
+	border-color: black;
+	border-width: 3px;
+	border-style: solid;
+	background-color: #D90404;
+	height: auto;
+}
+
+.footer-div{
+	float: left;
+	width: 33%;
+
+}
+.footer-btm {
+	width: 100%;
+}
+
+
+
+/*----- ANIMATIONS -----*/
+@keyframes sleeping {
+	0%{
+		transform: translate(20px, -20px);
+	}
+	10%{
+		transform: translate(20px, -30px);
+	}
+	20%{
+		transform: translate(40px, -40px);
+	}
+	30%{
+		transform: translate(30px, -50px);
+	}
+	40%{
+		transform: translate(20px, -60px);
+	}
+	50%{
+		transform: translate(40px, -70px);
+	}
+	60%{
+		transform: translate(50px, -80px);
+	}
+	70%{
+		transform: translate(30px, -90px);
+	}
+	80%{
+		transform: translate(60px, -100px);
+	}
+	90%{
+		transform: translate(40px, -115px);
+	}
+	100%{
+		transform: translate(20px, -130px);
+	}
+
+}
+
+@keyframes fly {
+	0%{
+		transform: translate(0px, -50px);
+	}
+	10%{
+		transform: translate(50px, -40px);
+	}
+	20%{
+		transform: translate(100px,  -50px);
+	}
+	30%{
+		transform: translate(150px, -60px);
+	}
+	40%{
+		transform: translate(200px,  -50px);
+	}
+	50%{
+		transform: translate(250px, -40px);
+	}
+	60%{
+		transform: translate(300px, -60px);
+	}
+	70%{
+		transform: translate(350px,  -50px);
+	}
+	80%{
+		transform: translate(400px, -40px);
+	}
+	90%{
+		transform: translate(450px,  -50px);
+	}
+	100%{
+		transform: translate(485px, -60px);
+	}
+
+}
+@keyframes pulse {
+	0% { transform: scale(0.5); }
+	100% { transform: scale(0.53); }
+}
+@keyframes hero {
+	0%{ transform: translate(0, 0) scale(0.5);}
+	50% { transform: translate(40%, -15%) scale(0.3);}
+	100%{ transform: translate(45%, -25%) scale(0.15); }
+}
+@keyframes scroll {
+	0% {background-color: black; }
+	100% {background-color: white;}
+}
+
+
+@keyframes tumbleweed {
+    from{
+        transform: translate(700%,10%) rotate(0deg);
+    }
+    to{
+        transform: translate(0%,0) rotate(720deg) ;
+    }
+}
+@keyframes robin {
+	0%{
+		transform: translate(50%, -100%); scale(0); opacity:50%; display:none;
+
+	}
+	0.1%{
+		transform: translate(30%,-620%);
+	}
+	2%,100%{
+		transform: translate(30%, -620%); scale(0); opacity:0; display:none;
+	}
+}
+
+
+/*---MEDIA QUERIES ---*/
+
+@media screen and (max-width:1169px ){
+    /*--- FRONT PAGE ---*/
+    #panel-1 .gradient-box {
+        margin-top:-91%;
+     }
+    #panel-2 .gradient-box {
+        margin-top: -51%;
+    }
+    #panel-3 .gradient-box {
+        margin-top: -45%;
+    }
+    #panel-4 .gradient-box {
+        margin-top: -70%;
+    }
+    
+    /*---BLOG ---*/
+   #sidebar-blog {
+    position: absolute;
+    left: 75%;
+   }
+  }
+
+@media screen and (max-width:1111px ){
+    /*---NAV MENU --*/
+    .nav-menu{
+        margin-top: -19%;
+    }
+    /*--- FRONT PAGE ---*/
+   #panel-1 .gradient-box {
+        margin-top:-94%;
+     }
+    #panel-2 .gradient-box {
+        margin-top: -54%;
+    }
+    #panel-3 .gradient-box {
+        margin-top: -49%;
+    }
+    #panel-4 .gradient-box {
+        margin-top: -73%;
+    }
+    /*---FOOTER ---*/
+    /*---ABOUT PAGE ---*/
+    #aboutus{
+        margin-top: -60%;
+    }
+    /*---ABOUT US --*/
+    /*---SERVICES ---*/
+    
+    /*---CONTACT ---*/
+    /*---PORTFOLIO ---*/
+    /*--- SINGLE PORTFOLIO ---*/
+    .port-image{
+        width: 58%;
+    }
+    .portpage-blurb p{
+        font-size: 1em;
+        line-height: 1em;
+    }
+    /*---BLOG ---*/
+    
+    /*---SINGLE BLOG ---*/
+    
+    
+}
+
+@media screen and (max-width:1066px ){
+    /*---NAV MENU --*/
+    
+    /*--- FRONT PAGE ---*/
+    .third{
+        width:38%
+    }
+    .half{
+        width: 59%
+    }
+    #panel-1 .gradient-box {
+        margin-top:-97%;
+     }
+    #panel-2 .gradient-box {
+        margin-top: -57%;
+    }
+    #panel-3 .gradient-box {
+        margin-top: -52%;
+    }
+    #panel-4 .gradient-box {
+        margin-top: -76%;
+    }
+    
+    /*---FOOTER ---*/
+    .footer-div{
+        width: 30%;
+    }
+    /*---ABOUT PAGE ---*/
+    #aboutus{
+        margin-top: -64%;
+    }
+    
+}
+
+@media screen and (max-width:1024px ){
+    /*---NAV MENU --*/
+   
+    
+    /*--- FRONT PAGE ---*/
+    
+    #panel-1 .gradient-box {
+        margin-top:-100%;
+     }
+    #panel-1 .text-box{
+        margin-top: -5%;
+    }
+    #panel-2 .gradient-box {
+        margin-top: -60%;
+    }
+    #panel-3 .gradient-box {
+        margin-top: -55%;
+    }
+    #panel-3 .text-box{
+        margin-top: -37%;
+    }
+    #panel-4 .gradient-box {
+        margin-top: -80%;
+    }
+    /*--- ABOUT --*/
+    #phonebooth {
+    position: absolute;
+    top: 45%;
+    left: -20%;
+    }
+    
+    #hero {
+    
+    margin-top: -40rem;
+    margin-left: -18rem;
+    }
+    #aboutus{
+        margin-top: -67%;
+    }
+    /*--- SINGLE PORTFOLIO ---*/
+    .portpage-blurb{
+        height: auto;
+        padding: 1%;
+    }
+    
+    /*---BLOG ---*/
+    
+    /*---SINGLE BLOG ---*/
+    
+    
+}
+
+@media screen and (max-width:1000px ){
+    /*---NAV MENU --*/
+   
+    .nav-menu{
+        margin-top: -22%;
+    }
+    .widget_wpcom_social_media_icons_widget ul li{
+        font-size: 1.7em; 
+    }
+    /*--- FRONT PAGE ---*/
+    
+     #panel-1 .gradient-box {
+        margin-top:-115%;
+     }
+    #panel-1 .text-box{
+        margin-top: 10%;
+    }
+    #panel-2 .gradient-box {
+        margin-top: -60%;
+    }
+    #panel-3 .gradient-box {
+        margin-top: -55%;
+    }
+    #panel-3 .text-box{
+        margin-top: -40%;
+    }
+    #panel-4 .gradient-box {
+        margin-top: -80%;
+    }
+}
+
+@media screen and (max-width:950px ){
+    /*---NAV MENU --*/
+   
+    
+    
+    /*--- FRONT PAGE ---*/
+    #panel-1 p, #panel-2 p, #panel-3 p, #panel-4 p{
+        font-size: 0.9em;
+    }
+     #panel-1 .gradient-box {
+        margin-top:-110%;
+     }
+    #panel-1 .text-box{
+        margin-top: 10%;
+    }
+    #panel-2 .gradient-box {
+        margin-top: -63%;
+    }
+    #panel-3 .gradient-box {
+        margin-top: -55%;
+    }
+    
+    #panel-3 .text-box{
+        margin-top: -40%;
+    }
+    #panel-4 .gradient-box {
+        margin-top: -84%;
+    }
+    
+   }
+
+@media screen and (max-width:900px ){
+    /*---NAV MENU --*/
+   
+    
+    
+    /*--- FRONT PAGE ---*/
+    
+    #panel-1 .gradient-box {
+        margin-top:-118%;
+     }
+    
+    #panel-2 .gradient-box {
+        margin-top: -69%;
+    }
+    #panel-3 .gradient-box {
+        margin-top: -60%;
+    }
+    
+    #panel-3 .text-box{
+        margin-top: -40%;
+    }
+    #panel-4 .gradient-box {
+        margin-top: -94%;
+    }
+    #panel-4 .text-box{
+        margin-top: -90%;
+    }
+    
+    
+}
+
+@media screen and (max-width:825px ){
+    /*---NAV MENU --*/
+   
+    .nav-menu {
+        margin-top: -24%;
+    }
+    
+    .widget_wpcom_social_media_icons_widget ul li{
+        font-size: 1.5em; 
+    }
+    /*--- FRONT PAGE ---*/
+    
+    #panel-1 .gradient-box {
+        margin-top:-125%;
+     }
+    
+    #panel-2 .gradient-box {
+        margin-top: -75%;
+    }
+    #panel-3 .gradient-box {
+        margin-top: -67%;
+    }
+    
+    #panel-3 .text-box{
+        margin-top: -40%;
+    }
+    #panel-4 .gradient-box {
+        margin-top: -100%;
+    }
+    #panel-4 .text-box{
+        margin-top: -100%;
+    }
+    
+    
+    /*---FOOTER ---*/
+    /*---ABOUT PAGE ---*/
+   #phonebooth {
+    position: absolute;
+    top: 55%;
+    left: -30%;
+    }
+    
+    #hero {
+    
+    margin-top: -40rem;
+    margin-left: -34rem;
+    }
+    #aboutus{
+        margin-top: -82%;
+    }
+   
+}
+@media screen and (max-width:798px ){
+    .postlisting {
+        width: 35%;
+    }
+}
+
+
+@media screen and (max-width:768px ){
+    /*---NAV MENU --*/
+    .nav {
+        height: 175px;
+    }
+    .logo {
+        height: 168px;
+    }
+    .nav-menu {
+        display: none;
+    }
+    #menu-btn{
+        display: block;
+    }
+    .widget-area {
+    height: 150px;
+    width: 68%;
+    margin-left: 30%;
+}
+    /*--- FRONT PAGE ---*/
+    
+     #panel-1 .gradient-box {
+        margin-top:-140%;
+         height: auto;
+     }
+    #panel-1 .text-box{
+        height: auto;
+        margin-top: 0;
+    }
+    #panel-2 .gradient-box {
+        margin-top: -85%;
+        height: auto;
+    }
+    #panel-2 .text-box{
+        height: auto;
+        margin-top: -10%;
+    }
+    #panel-3 .gradient-box {
+        margin-top: -67%;
+        height: auto;
+    }
+    
+    #panel-3 .text-box{
+        margin-top: -70%;
+        height: auto;
+    }
+    #panel-4 .gradient-box {
+        margin-top: -110%;
+        height: auto;
+    }
+    #panel-4 .text-box{
+        margin-top: -110%;
+        height: auto;
+    }
+    
+    
+    /*---FOOTER ---*/
+    /*---ABOUT PAGE ---*/
+   
+    /*---ABOUT US --*/
+    /*---SERVICES ---*/
+    
+    /*---CONTACT ---*/
+    /*---PORTFOLIO ---*/
+    /*--- SINGLE PORTFOLIO ---*/
+    .row-spec {
+        width: 59%;
+        
+    }
+    .spec{
+        height: 25vh;
+    }
+    
+    .fa-code, .fa-calendar, .fa-cogs {
+        margin-top: 3%;
+        text-align: center;
+        margin-left: 30%
+    }
+    .tech-list, .date, .service-list{
+        margin-top: 10%;
+        text-align: left;
+        margin-left: 5%;
+    }
+    .date{
+        text-align:center;
+        margin-left: 0;
+    }
+    /*---BLOG ---*/
+    
+    /*---SINGLE BLOG ---*/
+    
+    
+}
+
+@media screen and (max-width:711px ){
+    /*---NAV MENU --*/
+   
+    /*--- FRONT PAGE ---*/
+    
+    .third, .half, .row{
+        width: 100%;
+    }
+    #sidebar-home{
+        position: relative;
+        width: 100%;
+        margin: 0;
+    }
+  
+     #panel-1 .gradient-box {
+        margin-top:-35%;
+         
+     }
+    #panel-1 .text-box{
+        height: auto;
+        margin-top: 0;
+    }
+    #panel-2 .gradient-box {
+        margin-top: -30%;
+        
+    }
+    #panel-2 .text-box{
+       
+        margin-top: 0%;
+    }
+    #panel-3 .gradient-box {
+        margin-top: -30%;
+        
+    }
+    
+    #panel-3 .text-box{
+        margin-top: -10%;
+        
+    }
+    #panel-4 .gradient-box {
+        margin-top: -30%;
+       
+    }
+    #panel-4 .text-box{
+        margin-top: -10%;;
+        
+    }
+    /*---FOOTER ---*/
+    /*---ABOUT PAGE ---*/
+   
+    /*---ABOUT US --*/
+    /*---SERVICES ---*/
+    div.left-sidebar.sidebar.contact-panel {
+        width: 100%;
+        height: auto;
+    }
+    .form-btn {
+    margin-top: 2%;
+        margin-bottom: 2%;
+}
+    .us li {
+        display: inline;
+        font-size: 2.5em;
+        
+    }
+    .services{
+        width: 100%;
+    }
+    .landing{
+        height: 35%;
+    }
+    #batman {
+    margin-top: -30%;
+    width: 30%;
+}
+    
+    @keyframes robin {
+	0%{
+		transform: translate(50%, -100%); scale(0); opacity:50%; display:none;
+
+	}
+	0.1%{
+		transform: translate(7%,-500%);
+	}
+	2%,100%{
+		transform: translate(7%, -500%); scale(0); opacity:0; display:none;
+	}
+}
+    /*---CONTACT ---*/
+    .contactus{
+        margin-left: 3%;
+        width: 80%;
+        height: 100%;
+    }
+    /*---PORTFOLIO ---*/
+    /*--- SINGLE PORTFOLIO ---*/
+   
+    /*---BLOG ---*/
+    #sidebar-blog{
+        display: none;
+    }
+    .postlisting{
+        width: 45%;
+    }
+    /*---SINGLE BLOG ---*/
+    
+    
+}
+
+
+@media screen and (max-width:580px ){
+    /*---NAV MENU --*/
+    .widget-area{
+        margin-left: 20%;
+        width: 75%;
+    }
+    /*--- FRONT PAGE ---*/
+    
+   
+     #panel-1 .gradient-box {
+        margin-top:-50%;
+         
+     }
+    #panel-1 .text-box{
+        height: auto;
+        margin-top: 0;
+    }
+    #panel-2 .gradient-box {
+        margin-top: -45%;
+        
+    }
+    #panel-2 .text-box{
+       
+        margin-top: 0%;
+    }
+    #panel-3 .gradient-box {
+        margin-top: -40%;
+        
+    }
+    
+    #panel-3 .text-box{
+        margin-top: -20%;
+        
+    }
+    #panel-4 .gradient-box {
+        margin-top: -30%;
+       
+    }
+    #panel-4 .text-box{
+        margin-top: -20%;;
+        
+    }
+    /*---FOOTER ---*/
+    /*---ABOUT PAGE ---*/
+   
+    /*---ABOUT US --*/
+    /*---SERVICES ---*/
+    
+    /*---CONTACT ---*/
+    
+    /*---PORTFOLIO ---*/
+    /*--- SINGLE PORTFOLIO ---*/
+    .portpage-blurb, .port-image, .row-spec{
+        width: 100%;
+    }
+    .spec{
+        height: 30%;
+    }
+    /*---BLOG ---*/
+    
+    /*---SINGLE BLOG ---*/
+    
+    
+}
+
+@media screen and (max-width:410px ){
+    /*---NAV MENU --*/
+    .widget-area{
+        margin-left: 25%;
+        width: 75%;
+    }
+    #menu-btn {
+    
+    position: absolute;
+    left: 50px;
+    top: 30px;
+}
+    #text-5 {
+        margin-top: -20px;
+    }
+    
+    #menu-mobile-menu {
+        width: 50%;
+    }
+    /*--- FRONT PAGE ---*/
+    
+   #panel-1 .gradient-box {
+        margin-top:-70%;
+         
+     }
+    #panel-1 .text-box{
+        height: auto;
+        margin-top: 0;
+    }
+    #panel-2 .gradient-box {
+        margin-top: -65%;
+        
+    }
+    #panel-2 .text-box{
+       
+        margin-top: 0%;
+    }
+    #panel-3 .gradient-box {
+        margin-top: -60%;
+        
+    }
+    
+    #panel-3 .text-box{
+        margin-top: -40%;
+        
+    }
+    #panel-4 .gradient-box {
+        margin-top: -50%;
+       
+    }
+    #panel-4 .text-box{
+        margin-top: -40%;;
+        
+    }
+ 
+    /*---FOOTER ---*/
+    /*---ABOUT PAGE ---*/
+   
+    /*---ABOUT US --*/
+    /*---SERVICES ---*/
+    
+    /*---CONTACT ---*/
+    .contactus{
+        height: 150%;
+        width: 100%;
+    }
+    /*---PORTFOLIO ---*/
+    /*--- SINGLE PORTFOLIO ---*/
+    
+    /*---BLOG ---*/
+    
+    /*---SINGLE BLOG ---*/
+    
+    
+}
